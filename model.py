@@ -19,4 +19,10 @@ def convert_to_int(word):
 
 scores['experience'] = scores['experience'].apply(lambda x : convert_to_int(x))
 
+# Selecting salary from the last column.
 salary = dataset.iloc[:, -1]
+
+# Splitting training and test sets. Since the given dataset is
+# small, we'll train our model with all the data at hand.
+from sklearn.linear_model import LinearRegression
+linreg = LinearRegression()
