@@ -26,3 +26,12 @@ salary = dataset.iloc[:, -1]
 # small, we'll train our model with all the data at hand.
 from sklearn.linear_model import LinearRegression
 linreg = LinearRegression()
+
+# Fitting the model with training data.
+linreg.fit(scores, salary)
+
+# Saving the model:
+pickle.dump(linreg, open('model.pkl', 'wb'))
+
+# Loading the model to compare the results.
+model = pickle.load(open('model.pkl', 'rb'))
