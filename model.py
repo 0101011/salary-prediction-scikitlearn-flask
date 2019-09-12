@@ -4,6 +4,8 @@ import pandas as pd
 import pickle
 
 dataset = pd.read_csv("hiring.csv")
+
+# Filling NaNs:
 dataset["experience"].fillna('zero', inplace=True)
 dataset["test_score"].fillna(dataset["test_score"].mean(), inplace=True)
 
